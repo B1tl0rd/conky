@@ -20,30 +20,30 @@ starty=15
 gap=15
 ypos=0
 ypos=starty+ypos
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=15,y=ypos,txt=weather_location})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=15,y=ypos,txt=weather_location})
 ypos=gap+ypos
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=15,y=ypos,txt="Current Weather for "..now["time"]})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=15,y=ypos,txt="Current Weather for "..now["time"]})
 image({x=20,y=55,h=40,w=40,file=now["weather_icon"]})
 image({x=204,y=30,h=50,w=50,file=now["wind_icon"]})
 --data titles
 ypos=gap+ypos
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=15,y=ypos,txt="Conditions:"})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=15,y=ypos,txt="Conditions:"})
 ypos=gap+ypos
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=70,y=ypos,txt="Temperature:"})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=70,y=ypos,txt="Temperature:"})
 ypos=gap+ypos
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=70,y=ypos,txt="Feels Like:"})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=70,y=ypos,txt="Feels Like:"})
 ypos=gap+ypos
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=70,y=ypos,txt="      Wind:"})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=70,y=ypos,txt="      Wind:"})
 --output of data options
 ypos=0
 ypos=starty+gap+gap+ypos
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=105,y=ypos,txt=now["conditions_short"]})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=105,y=ypos,txt=now["conditions_short"]})
 ypos=gap+ypos
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=170,y=ypos,txt=now["temp"].."°"})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=170,y=ypos,txt=now["temp"].."°"})
 ypos=gap+ypos
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=170,y=ypos,txt=now["feels_like"].."°"})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=170,y=ypos,txt=now["feels_like"].."°"})
 ypos=gap+ypos
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=170,y=ypos,txt=now["wind_mph"]})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=170,y=ypos,txt=now["wind_mph"]})
 
 out({x=15,y=115,txt="NEXT 3 HOURS"})
 image({w=30,h=30,x=20,y=125,file=now["fc_hour1_wicon"]})--good
@@ -76,9 +76,9 @@ for i=start_day,number_of_days-(start_day-1) do--start of day repeat, do not edi
 local tlx=top_left_x_coordinate[i]--sets top left x position for each repeat ###################
 local tly=top_left_y_coordinate[i]--sets top left y position for each repeat ###################
 --########################################################################################
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=tlx,y=tly,txt=forecast_day[i].." "..forecast_date[i]})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=tlx,y=tly,txt=forecast_day[i].." "..forecast_date[i]})
 image({x=tlx,y=tly+5,h=30,w=30,file=weather_icon[i]})
-out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=tlx+35,y=tly+15,txt=high_temp[i].."°/"..low_temp[i].."°"})
+out({c=0xffffff,a=1,f="DejaVu Sans",fs=12,x=tlx+35,y=tly+15,txt=high_temp[i].."°/"..low_temp[i].."°"})
 --out({c=0xffffff,a=1,f="DejaVu Sans",fs=13,x=tlx,y=tly+50,txt=conditions_short[i]})
 --########################################################################################
 end--of forecast repeat section ##########################################################

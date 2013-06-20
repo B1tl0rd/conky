@@ -1,9 +1,9 @@
 # Use Xft?
 use_xft yes
-xftfont Open Sans Light:size=8
+xftfont DejaVu Sans:size=8
 xftalpha 0.8
 text_buffer_size 2048
-uppercase yes
+#uppercase yes
 
 # Update interval in seconds
 update_interval 1
@@ -65,8 +65,8 @@ gap_y 70
 #	Calibri
 #	Engebrechtre
 #	Opeln2001
-#	Open Sans Light
-#	Open Sans Light
+#	DejaVu Sans
+#	DejaVu Sans
 
 # -- Lua Load -- #
 #lua_load ~/conky_now/.draw_bg.lua
@@ -77,24 +77,24 @@ gap_y 70
 
 imlib_cache_size 0
 
-color1 0099CC
-color2 9933CC
-color3 669900
-color4 FF8800
+color1 2C9EE6 # color1 0099CC
+color2 8755c9 # color2 9933CC
+color3 74A80C # color3 669900
+color4 EB9659 # color4 FF8800
 color5 CC0000
 color6 AAAAAA
 color7 484848
 
 TEXT
-${lua conky_draw_bg}${execi 300 curl -s "http://weather.yahooapis.com/forecastrss?w=12789983&u=f" -o ~/.conky/conky_now/cache/weather.xml}${font Open Sans Light:size=15}${execi 300 grep "yweather:location" ~/.conky/conky_now/cache/weather.xml | grep -o "city=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}, ${execi 300 grep "yweather:location" ~/.conky/conky_now/cache/weather.xml | grep -o "country=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${font}
-${font Open Sans Light:size=45}${alignr}${execi 300 grep "yweather:condition" ~/.conky/conky_now/cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°${font}
-${lua conky_draw_bg}${execi 300 cp -f ~/.conky/conky_now/.weathericons/$(grep "yweather:condition" ~/.conky/conky_now/cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*").png ~/.conky/conky_now/cache/weather.png}${image ~/.conky/conky_now/cache/weather.png -p 0,45 -s 60x60}
-${execi 300 grep "yweather:condition" ~/.conky/conky_now/cache/weather.xml | grep -o "text=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}
-${color6}${execi 300 grep "yweather:wind" ~/.conky/conky_now/cache/weather.xml | grep -o "speed=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${execi 300 grep "yweather:units" ~/.conky/conky_now/cache/weather.xml | grep -o "speed=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${color}
-${lua conky_draw_bg}${execi 300 cp -f ~/.conky/conky_now/.weathericons/$(grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | head -n1).png ~/.conky/conky_now/cache/weather-today.png}${image ~/.conky/conky_now/cache/weather-today.png -p 0,175 -s 30x30}${execi 300 cp -f ~/.conky/conky_now/.weathericons/$(grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | tail -n1).png ~/.conky/conky_now/cache/weather-tomorrow.png}${image ~/.conky/conky_now/cache/weather-tomorrow.png -p 130,175 -s 30x30}
-${goto 60}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "day=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | head -n1}${goto 190}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "day=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | tail -n1}
-${goto 60}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | head -n1}° ${color6}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | head -n1}°${color}${goto 190}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | tail -n1}° ${color6}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | tail -n1}°${color}${voffset 15}
-${color7}${hr}${color}
+#${lua conky_draw_bg}${execi 300 curl -s "http://weather.yahooapis.com/forecastrss?w=12789983&u=f" -o ~/.conky/conky_now/cache/weather.xml}${font DejaVu Sans:size=15}${execi 300 grep "yweather:location" ~/.conky/conky_now/cache/weather.xml | grep -o "city=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}, ${execi 300 grep "yweather:location" ~/.conky/conky_now/cache/weather.xml | grep -o "country=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${font}
+#${font DejaVu Sans:size=45}${alignr}${execi 300 grep "yweather:condition" ~/.conky/conky_now/cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°${font}
+#${lua conky_draw_bg}${execi 300 cp -f ~/.conky/conky_now/.weathericons/$(grep "yweather:condition" ~/.conky/conky_now/cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*").png ~/.conky/conky_now/cache/weather.png}${image ~/.conky/conky_now/cache/weather.png -p 0,45 -s 60x60}
+#${execi 300 grep "yweather:condition" ~/.conky/conky_now/cache/weather.xml | grep -o "text=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}
+#${color6}${execi 300 grep "yweather:wind" ~/.conky/conky_now/cache/weather.xml | grep -o "speed=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${execi 300 grep "yweather:units" ~/.conky/conky_now/cache/weather.xml | grep -o "speed=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${color}
+#${lua conky_draw_bg}${execi 300 cp -f ~/.conky/conky_now/.weathericons/$(grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | head -n1).png ~/.conky/conky_now/cache/weather-today.png}${image ~/.conky/conky_now/cache/weather-today.png -p 0,175 -s 30x30}${execi 300 cp -f ~/.conky/conky_now/.weathericons/$(grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "code=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | tail -n1).png ~/.conky/conky_now/cache/weather-tomorrow.png}${image ~/.conky/conky_now/cache/weather-tomorrow.png -p 130,175 -s 30x30}
+#${goto 60}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "day=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | head -n1}${goto 190}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "day=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | tail -n1}
+#${goto 60}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | head -n1}° ${color6}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | head -n1}°${color}${goto 190}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "high=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | tail -n1}° ${color6}${execi 300 grep "yweather:forecast" ~/.conky/conky_now/cache/weather.xml | grep -o "low=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*" | tail -n1}°${color}${voffset 15}
+#${color7}${hr}${color}
 ${if_existing /proc/net/route wlan0}
 ${color1}Up:${color} ${color3}${upspeed wlan0}${color}${alignr}${color1}Down:${color} ${color3}${downspeed wlan0}${color}
 ${upspeedgraph wlan0 50,120 FF8800 FF8800}${alignr}${downspeedgraph wlan0 50,120 FF8800 FF8800}
@@ -117,31 +117,31 @@ ${color6}Connect to a network to see statistics${color}
 ${voffset 50}
 ${endif}${endif}${endif}${voffset -15}
 ${color7}${hr}${color}
-${font Open Sans Light:size=15}System Info 
-${color}${font Open Sans Light:pixelsize=10}USER: ${color1}${alignr}${nodename}
-${color}${font Open Sans Light:pixelsize=10}DISTRO:  ${color1}${alignr}${pre_exec lsb_release -sd || cat /etc/*release}
-${color}${font Open Sans Light:pixelsize=10}KERNEL: ${color1}${alignr}${kernel}
-${color}${font Open Sans Light:pixelsize=10}ARCH: ${color1}${alignr}$machine
-${color}${font Open Sans Light:pixelsize=10}CPU: ${color1}${alignr}${freq_g cpu0} GHz
-${color}${font Open Sans Light:pixelsize=10}UPTIME: ${color1}${alignr}${uptime}
-${color}${font Open Sans Light:pixelsize=10}PROCESSES: ${color1}${alignr}$processes ($running_processes running)
+${font DejaVu Sans:size=11}SYSTEM INFO
+${color}${font DejaVu Sans:size=9}User: ${color1}${alignr}${nodename}
+${color}${font DejaVu Sans:size=9}Distro:  ${color1}${alignr}${pre_exec lsb_release -sd || cat /etc/*release}
+${color}${font DejaVu Sans:size=9}Kernel: ${color1}${alignr}${kernel}
+${color}${font DejaVu Sans:size=9}Arch: ${color1}${alignr}$machine
+${color}${font DejaVu Sans:size=9}CPU: ${color1}${alignr}${freq_g cpu0} GHz
+${color}${font DejaVu Sans:size=9}Uptime: ${color1}${alignr}${uptime}
+${color}${font DejaVu Sans:size=9}Processes: ${color1}${alignr}$processes ($running_processes running)
 ${color7}${hr}${color}
-${font Open Sans Light:size=15}Processors/Memory
-${color}${font Open Sans Light:pixelsize=10}CPU 1: ${color1}${alignc}${freq_g 0} ${color1}Ghz ${color2}${alignr}${cpu cpu0}${color1}%
-${color}${font Open Sans Light:pixelsize=10}CPU 2: ${color1}${alignc}${freq_g 1} ${color1}Ghz ${color2}${alignr}${cpu cpu1}${color1}%
-${color}${font Open Sans Light:pixelsize=10}CPU 3: ${color1}${alignc}${freq_g 2} ${color1}Ghz ${color2}${alignr}${cpu cpu2}${color1}%
-${color}${font Open Sans Light:pixelsize=10}CPU 4: ${color1}${alignc}${freq_g 3} ${color1}Ghz ${color2}${alignr}${cpu cpu3}${color1}%
+${font DejaVu Sans:size=11}PROCESSORS/MEMORY
+${color}${font DejaVu Sans:size=9}CPU 1: ${color1}${alignc}${freq_g 0} ${color1}Ghz ${color2}${alignr}${cpu cpu0}${color1}%
+${color}${font DejaVu Sans:size=9}CPU 2: ${color1}${alignc}${freq_g 1} ${color1}Ghz ${color2}${alignr}${cpu cpu1}${color1}%
+${color}${font DejaVu Sans:size=9}CPU 3: ${color1}${alignc}${freq_g 2} ${color1}Ghz ${color2}${alignr}${cpu cpu2}${color1}%
+${color}${font DejaVu Sans:size=9}CPU 4: ${color1}${alignc}${freq_g 3} ${color1}Ghz ${color2}${alignr}${cpu cpu3}${color1}%
 ${alignr}${loadgraph 50,250 FF8800 FF8800 -l}
-${color}${font Open Sans Light:pixelsize=10}RAM: ${color3}${alignc 10}${mem}
-${color}${font Open Sans Light:pixelsize=10}TOTAL: ${color3}${alignc 10}${memmax}
+${color}${font DejaVu Sans:size=9}Ram: ${color3}${alignc 10}${mem}
+${color}${font DejaVu Sans:size=9}Total: ${color3}${alignc 10}${memmax}
 #${alignr}${memgraph 50,250 FF8800 FF8800 -l}
 ${color7}${hr}${color}
-${font Open Sans Light:size=15}Top Processes
-${color}${font Open Sans Light:pixelsize=10}${color}${top_mem name 1}${color1}${alignc -10}${top_mem mem_res 1}${color2}${alignr}${top_mem mem 1}${color1} %
-${color}${font Open Sans Light:pixelsize=10}${color}${top_mem name 2}${color1}${alignc -10}${top_mem mem_res 2}${color2}${alignr}${top_mem mem 2}${color1} %
-${color}${font Open Sans Light:pixelsize=10}${color}${top_mem name 3}${color1}${alignc -10}${top_mem mem_res 3}${color2}${alignr}${top_mem mem 3}${color1} %
-${color}${font Open Sans Light:pixelsize=10}${color}${top_mem name 4}${color1}${alignc -10}${top_mem mem_res 4}${color2}${alignr}${top_mem mem 4}${color1} %
-${color}${font Open Sans Light:pixelsize=10}${color}${top_mem name 5}${color1}${alignc -10}${top_mem mem_res 5}${color2}${alignr}${top_mem mem 5}${color1} %
+${font DejaVu Sans:size=11}TOP PROCESSES
+${color}${font DejaVu Sans:size=9}${color}${top_mem name 1}${color1}${alignc -10}${top_mem mem_res 1}${color2}${alignr}${top_mem mem 1}${color1} %
+${color}${font DejaVu Sans:size=9}${color}${top_mem name 2}${color1}${alignc -10}${top_mem mem_res 2}${color2}${alignr}${top_mem mem 2}${color1} %
+${color}${font DejaVu Sans:size=9}${color}${top_mem name 3}${color1}${alignc -10}${top_mem mem_res 3}${color2}${alignr}${top_mem mem 3}${color1} %
+${color}${font DejaVu Sans:size=9}${color}${top_mem name 4}${color1}${alignc -10}${top_mem mem_res 4}${color2}${alignr}${top_mem mem 4}${color1} %
+${color}${font DejaVu Sans:size=9}${color}${top_mem name 5}${color1}${alignc -10}${top_mem mem_res 5}${color2}${alignr}${top_mem mem 5}${color1} %
 ${color7}${hr}${color}
-${font Open Sans Light:size=15}TODO
-${color}${font Open Sans Light:pixelsize=10}${color}${execpi 10 ~/bin/todo.sh -p ls}
+${font DejaVu Sans:size=13}TODO
+${color}${font DejaVu Sans:size=9}${color}${execpi 10 ~/bin/todo.sh -p ls}
