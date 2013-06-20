@@ -1,0 +1,48 @@
+##############################################
+#  Settings
+##############################################
+max_specials 10000
+max_user_text 1500000
+background no
+use_xft yes
+#xftfont Sans:size=12
+#xftalpha 1
+font Mono:size=8
+total_run_times 0
+own_window yes
+own_window_argb_visual yes
+own_window_transparent yes
+#own_window_type normal
+own_window_type desktop
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 600 600
+maximum_width 600
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color white
+default_shade_color black
+default_outline_color white
+alignment top_right
+gap_x 1300
+gap_y 60
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+color1 86acad #darker blue
+color2 b1c9c9 #lighter blue
+text_buffer_size 100000
+top_name_width 10
+update_interval 1
+
+lua_load ~/.conky/v9000/v9000.lua
+lua_draw_hook_pre weather
+#lua_load ~/.conky/v9000/weather_testing.lua
+lua_load ~/.conky/v9000/weather_script.lua
+#lua_load ~/.conky/v9000/s11template.lua
+
+TEXT
+${goto 230}${cpu}

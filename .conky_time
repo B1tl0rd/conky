@@ -1,0 +1,35 @@
+alignment bottom_left
+background no
+border_margin 5
+border_width 5
+default_color ffffff  #2D2D2D # grey 5f5f5f 3F3F3F 183149 3B3B3B 26211F
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades no
+gap_x 10
+gap_y 170
+maximum_width 1500
+minimum_size 1550
+no_buffers yes
+override_utf8_locale yes
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_transparent yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_argb_visual yes
+#own_window_argb_value 255
+text_buffer_size 8000
+total_run_times 0
+update_interval 1
+uppercase yes
+use_xft yes
+xftalpha 1
+xftfont Raleway:pixelsize=9
+
+
+TEXT
+${font Futurist Fixed Width:pixelsize=25}${time %A, %d %B, %Y}
+${font GeosansLight:pixelsize=25}${time %H:%M}
